@@ -1,0 +1,2017 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!29 &1
+OcclusionCullingSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_OcclusionBakeSettings:
+    smallestOccluder: 5
+    smallestHole: 0.25
+    backfaceThreshold: 100
+  m_SceneGUID: 00000000000000000000000000000000
+  m_OcclusionCullingData: {fileID: 0}
+--- !u!104 &2
+RenderSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 10
+  m_Fog: 1
+  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_FogMode: 3
+  m_FogDensity: 0.03
+  m_LinearFogStart: 0
+  m_LinearFogEnd: 300
+  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
+  m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
+  m_AmbientIntensity: 1
+  m_AmbientMode: 0
+  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
+  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_HaloStrength: 0.5
+  m_FlareStrength: 1
+  m_FlareFadeSpeed: 3
+  m_HaloTexture: {fileID: 0}
+  m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
+  m_DefaultReflectionMode: 0
+  m_DefaultReflectionResolution: 128
+  m_ReflectionBounces: 1
+  m_ReflectionIntensity: 1
+  m_CustomReflection: {fileID: 0}
+  m_Sun: {fileID: 0}
+  m_UseRadianceAmbientProbe: 0
+--- !u!157 &3
+LightmapSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 13
+  m_BakeOnSceneLoad: 0
+  m_GISettings:
+    serializedVersion: 2
+    m_BounceScale: 1
+    m_IndirectOutputScale: 1
+    m_AlbedoBoost: 1
+    m_EnvironmentLightingMode: 0
+    m_EnableBakedLightmaps: 1
+    m_EnableRealtimeLightmaps: 0
+  m_LightmapEditorSettings:
+    serializedVersion: 12
+    m_Resolution: 2
+    m_BakeResolution: 40
+    m_AtlasSize: 1024
+    m_AO: 0
+    m_AOMaxDistance: 1
+    m_CompAOExponent: 1
+    m_CompAOExponentDirect: 0
+    m_ExtractAmbientOcclusion: 0
+    m_Padding: 2
+    m_LightmapParameters: {fileID: 0}
+    m_LightmapsBakeMode: 1
+    m_TextureCompression: 1
+    m_ReflectionCompression: 2
+    m_MixedBakeMode: 2
+    m_BakeBackend: 2
+    m_PVRSampling: 1
+    m_PVRDirectSampleCount: 32
+    m_PVRSampleCount: 512
+    m_PVRBounces: 2
+    m_PVREnvironmentSampleCount: 256
+    m_PVREnvironmentReferencePointCount: 2048
+    m_PVRFilteringMode: 1
+    m_PVRDenoiserTypeDirect: 2
+    m_PVRDenoiserTypeIndirect: 2
+    m_PVRDenoiserTypeAO: 2
+    m_PVRFilterTypeDirect: 0
+    m_PVRFilterTypeIndirect: 0
+    m_PVRFilterTypeAO: 0
+    m_PVREnvironmentMIS: 1
+    m_PVRCulling: 1
+    m_PVRFilteringGaussRadiusDirect: 1
+    m_PVRFilteringGaussRadiusIndirect: 1
+    m_PVRFilteringGaussRadiusAO: 1
+    m_PVRFilteringAtrousPositionSigmaDirect: 0.5
+    m_PVRFilteringAtrousPositionSigmaIndirect: 2
+    m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_ExportTrainingData: 0
+    m_TrainingDataDestination: TrainingData
+    m_LightProbeSampleCountMultiplier: 4
+  m_LightingDataAsset: {fileID: 20201, guid: 0000000000000000f000000000000000, type: 0}
+  m_LightingSettings: {fileID: 0}
+--- !u!196 &4
+NavMeshSettings:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_BuildSettings:
+    serializedVersion: 3
+    agentTypeID: 0
+    agentRadius: 0.5
+    agentHeight: 2
+    agentSlope: 45
+    agentClimb: 0.4
+    ledgeDropHeight: 0
+    maxJumpAcrossDistance: 0
+    minRegionArea: 2
+    manualCellSize: 0
+    cellSize: 0.16666667
+    manualTileSize: 0
+    tileSize: 256
+    buildHeightMesh: 0
+    maxJobWorkers: 0
+    preserveTilesOutsideBounds: 0
+    debug:
+      m_Flags: 0
+  m_NavMeshData: {fileID: 0}
+--- !u!1 &559758153
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 559758155}
+  - component: {fileID: 559758156}
+  m_Layer: 0
+  m_Name: Aquarium
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &559758155
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559758153}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1938726513}
+  - {fileID: 769580530}
+  - {fileID: 1878710690}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &559758156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559758153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43401ff7af1df764199787686c29bcb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Aquarium.AquariumDirector
+  seed: 20260925
+  tunnel:
+    width: 4
+    wallHeight: 3
+    length: 6
+    eyePosition: {x: 0, y: 1.6, z: 0}
+    farClip: 160
+  display:
+    layout: 1
+    controlPanel: 1
+    controlPanelPreviews: 1
+    leftWallCamera: {fileID: 1938726510}
+    rightWallCamera: {fileID: 769580528}
+    floorCamera: {fileID: 1878710688}
+    leftWallDisplay: 1
+    rightWallDisplay: 2
+    floorDisplay: 3
+    activateDisplays: 1
+    glassLayerStart: 29
+    smaaQuality: 2
+  tank:
+    halfWidth: 14
+    halfLength: 30
+    seabedDepth: -6
+    surfaceHeight: 7
+    glassMargin: 0.5
+  water:
+    fogColor: {r: 0.015, g: 0.16, b: 0.24, a: 1}
+    fogDensity: 0.042
+    sunColor: {r: 0.78, g: 0.93, b: 1, a: 1}
+    sunIntensity: 1.9
+    sunAngles: {x: 70, y: -25}
+    causticScale: 0.16
+    causticSpeed: 0.55
+    causticIntensity: 1.25
+    sunScatter: 1
+    surfaceGlow: 0.9
+    godRayIntensity: 0.4
+    godRayCount: 30
+    absorption: 0.03
+    ambientCurrent: {x: 0.02, y: 0.12}
+    ambientTop: {r: 0.1, g: 0.32, b: 0.42, a: 1}
+    ambientEquator: {r: 0.04, g: 0.17, b: 0.25, a: 1}
+    ambientBottom: {r: 0.02, g: 0.06, b: 0.09, a: 1}
+    postProcessing: 1
+    floodLights: 1
+  interaction:
+    fleeRadius: 2.6
+    reach: 14
+    lingerTime: 0.7
+    reactionWaveSpeed: 14
+    reactionJitter: 0.08
+    escapeDuration: 1.4
+    rippleStrength: 1
+    fluidPush: 55
+    fluidDrag: 6
+    bubblesPerTap: 28
+    ignoreMouseWhileTouching: 1
+    attractDelay: 0.5
+    followSpeed: 0.35
+    scareSpeed: 0.9
+    attractRadius: 7
+    feedDelay: 1.2
+    foodRate: 4
+    mouseHover: 1
+    hoverStrength: 0.6
+    hoverIdleTime: 6
+    plantPush: 1
+    plantPushRadius: 1.8
+  waterLayer:
+    waveSpeed: 0.55
+    damping: 0.9
+    viscosity: 0.0015
+    texelsPerMetre: 96
+    liquidTexelsPerMetre: 40
+    liquidForce: 1.2
+    liquidVelocityDissipation: 0.8
+    liquidDyeDissipation: 0.9
+    liquidVorticity: 14
+    liquidPressureIterations: 24
+    liquidRefraction: 0.025
+    refraction: 0.03
+    maxOpacity: 0.6
+    waterTint: {r: 0.55, g: 0.85, b: 1, a: 1}
+    highlightColor: {r: 0.85, g: 0.97, b: 1, a: 1}
+    foam: 0.35
+    dispersion: 0.35
+  fishSizeMultiplier: 4
+  species:
+  - name: Silver Sardine
+    enabled: 1
+    count: 240
+    schoolSize: 60
+    customModel: {fileID: 0}
+    modelForward: 0
+    modelRotationOffset: {x: 0, y: 0, z: 0}
+    modelAnimationSpeed: 1
+    modelAnimationState: 
+    swimDeformStaticModels: 1
+    modelVariants: []
+    bodyType: 0
+    length: 0.2
+    lengthVariance: 0.15
+    bodyHeight: 0.2
+    bodyWidth: 0.12
+    thickestPoint: 0.35
+    peduncle: 0.1
+    noseSharpness: 0.5
+    tailLength: 0.22
+    tailHeight: 0.2
+    tailFork: 0.7
+    tailAsymmetry: 0
+    dorsalHeight: 0.07
+    dorsalRange: {x: 0.4, y: 0.55}
+    analHeight: 0.03
+    pectoralSize: 0.06
+    raySpan: 2.2
+    topColor: {r: 0.2, g: 0.36, b: 0.5, a: 1}
+    bellyColor: {r: 0.9, g: 0.93, b: 0.96, a: 1}
+    finColor: {r: 0.55, g: 0.62, b: 0.68, a: 1}
+    tailColor: {r: 0.4, g: 0.5, b: 0.58, a: 1}
+    tailColorStart: 0.2
+    stripeColor: {r: 1, g: 1, b: 1, a: 1}
+    stripeCount: 0
+    stripeWidth: 0.08
+    stripeOffset: 0
+    stripeStrength: 1
+    metallic: 0.3
+    smoothness: 0.88
+    sheen: 0.6
+    swimFrequency: 4.5
+    swimAmplitude: 0.12
+    bodyWaves: 0.9
+    turnRate: 220
+    burstCoast: 0
+    burstCoastRate: 0.7
+    spots: 0
+    finOpacity: 0.55
+    cruiseSpeed: 1.5
+    burstSpeed: 5.5
+    maxAcceleration: 7
+    banking: 8
+    neighbourRadius: 1.8
+    separationDistance: 0.3
+    separationWeight: 3
+    alignmentWeight: 2
+    cohesionWeight: 1.4
+    migrationWeight: 0.6
+    wanderWeight: 0.25
+    depthRange: {x: -3.5, y: 5.5}
+    homeHalfLength: 12
+    homeMaxX: 0
+    glassAffinity: 0.45
+    preferredGlassDistance: 3
+    curiosity: 0.3
+    fleeRadiusMultiplier: 1.25
+    fleeStrength: 16
+    currentInfluence: 0.8
+    isPredator: 0
+    stirsWater: 0
+  - name: Clownfish
+    enabled: 0
+    count: 24
+    schoolSize: 4
+    customModel: {fileID: 0}
+    modelForward: 0
+    modelRotationOffset: {x: 0, y: 0, z: 0}
+    modelAnimationSpeed: 1
+    modelAnimationState: 
+    swimDeformStaticModels: 1
+    modelVariants: []
+    bodyType: 0
+    length: 0.13
+    lengthVariance: 0.2
+    bodyHeight: 0.36
+    bodyWidth: 0.18
+    thickestPoint: 0.35
+    peduncle: 0.2
+    noseSharpness: 0
+    tailLength: 0.2
+    tailHeight: 0.24
+    tailFork: 0.05
+    tailAsymmetry: 0
+    dorsalHeight: 0.12
+    dorsalRange: {x: 0.3, y: 0.78}
+    analHeight: 0.08
+    pectoralSize: 0.09
+    raySpan: 2.2
+    topColor: {r: 1, g: 0.38, b: 0.04, a: 1}
+    bellyColor: {r: 1, g: 0.52, b: 0.14, a: 1}
+    finColor: {r: 1, g: 0.42, b: 0.06, a: 1}
+    tailColor: {r: 1, g: 0.42, b: 0.06, a: 1}
+    tailColorStart: 0
+    stripeColor: {r: 1, g: 1, b: 1, a: 1}
+    stripeCount: 3
+    stripeWidth: 0.075
+    stripeOffset: -0.1
+    stripeStrength: 1
+    metallic: 0
+    smoothness: 0.45
+    sheen: 0.1
+    swimFrequency: 5
+    swimAmplitude: 0.1
+    bodyWaves: 0.9
+    turnRate: 200
+    burstCoast: 0.65
+    burstCoastRate: 0.9
+    spots: 0
+    finOpacity: 0.85
+    cruiseSpeed: 0.45
+    burstSpeed: 3.2
+    maxAcceleration: 4
+    banking: 12
+    neighbourRadius: 1.2
+    separationDistance: 0.25
+    separationWeight: 2
+    alignmentWeight: 0.5
+    cohesionWeight: 1
+    migrationWeight: 0
+    wanderWeight: 1
+    depthRange: {x: -5.4, y: -1.2}
+    homeHalfLength: 7
+    homeMaxX: 6
+    glassAffinity: 0
+    preferredGlassDistance: 2.5
+    curiosity: 0.85
+    fleeRadiusMultiplier: 0.9
+    fleeStrength: 12
+    currentInfluence: 1
+    isPredator: 0
+    stirsWater: 0
+  - name: Blue Tang
+    enabled: 0
+    count: 40
+    schoolSize: 10
+    customModel: {fileID: 0}
+    modelForward: 0
+    modelRotationOffset: {x: 0, y: 0, z: 0}
+    modelAnimationSpeed: 1
+    modelAnimationState: 
+    swimDeformStaticModels: 1
+    modelVariants: []
+    bodyType: 0
+    length: 0.3
+    lengthVariance: 0.15
+    bodyHeight: 0.5
+    bodyWidth: 0.12
+    thickestPoint: 0.42
+    peduncle: 0.14
+    noseSharpness: 0.1
+    tailLength: 0.2
+    tailHeight: 0.34
+    tailFork: 0.3
+    tailAsymmetry: 0
+    dorsalHeight: 0.09
+    dorsalRange: {x: 0.18, y: 0.88}
+    analHeight: 0.08
+    pectoralSize: 0.1
+    raySpan: 2.2
+    topColor: {r: 0.04, g: 0.22, b: 0.85, a: 1}
+    bellyColor: {r: 0.1, g: 0.42, b: 0.95, a: 1}
+    finColor: {r: 0.03, g: 0.08, b: 0.35, a: 1}
+    tailColor: {r: 1, g: 0.82, b: 0.08, a: 1}
+    tailColorStart: 0.22
+    stripeColor: {r: 0.02, g: 0.03, b: 0.12, a: 1}
+    stripeCount: 1
+    stripeWidth: 0.16
+    stripeOffset: 0.05
+    stripeStrength: 0.75
+    metallic: 0
+    smoothness: 0.45
+    sheen: 0.3
+    swimFrequency: 3
+    swimAmplitude: 0.08
+    bodyWaves: 0.9
+    turnRate: 170
+    burstCoast: 0.45
+    burstCoastRate: 0.7
+    spots: 0
+    finOpacity: 0.9
+    cruiseSpeed: 0.9
+    burstSpeed: 4.5
+    maxAcceleration: 4.5
+    banking: 12
+    neighbourRadius: 1.8
+    separationDistance: 0.45
+    separationWeight: 2
+    alignmentWeight: 1.2
+    cohesionWeight: 0.8
+    migrationWeight: 0.45
+    wanderWeight: 0.5
+    depthRange: {x: -4, y: 3.5}
+    homeHalfLength: 12
+    homeMaxX: 0
+    glassAffinity: 0.65
+    preferredGlassDistance: 2
+    curiosity: 0.9
+    fleeRadiusMultiplier: 1
+    fleeStrength: 12
+    currentInfluence: 0.8
+    isPredator: 0
+    stirsWater: 0
+  - name: Yellow Tang
+    enabled: 0
+    count: 30
+    schoolSize: 6
+    customModel: {fileID: 0}
+    modelForward: 0
+    modelRotationOffset: {x: 0, y: 0, z: 0}
+    modelAnimationSpeed: 1
+    modelAnimationState: 
+    swimDeformStaticModels: 1
+    modelVariants: []
+    bodyType: 0
+    length: 0.22
+    lengthVariance: 0.15
+    bodyHeight: 0.62
+    bodyWidth: 0.1
+    thickestPoint: 0.42
+    peduncle: 0.15
+    noseSharpness: 0.35
+    tailLength: 0.18
+    tailHeight: 0.3
+    tailFork: 0.1
+    tailAsymmetry: 0
+    dorsalHeight: 0.14
+    dorsalRange: {x: 0.2, y: 0.85}
+    analHeight: 0.12
+    pectoralSize: 0.08
+    raySpan: 2.2
+    topColor: {r: 1, g: 0.82, b: 0.03, a: 1}
+    bellyColor: {r: 1, g: 0.9, b: 0.2, a: 1}
+    finColor: {r: 1, g: 0.8, b: 0.05, a: 1}
+    tailColor: {r: 1, g: 0.85, b: 0.1, a: 1}
+    tailColorStart: 0
+    stripeColor: {r: 1, g: 1, b: 1, a: 1}
+    stripeCount: 0
+    stripeWidth: 0.08
+    stripeOffset: 0
+    stripeStrength: 1
+    metallic: 0
+    smoothness: 0.4
+    sheen: 0.15
+    swimFrequency: 2.8
+    swimAmplitude: 0.08
+    bodyWaves: 0.9
+    turnRate: 170
+    burstCoast: 0.55
+    burstCoastRate: 0.7
+    spots: 0
+    finOpacity: 0.8
+    cruiseSpeed: 0.7
+    burstSpeed: 4
+    maxAcceleration: 4
+    banking: 12
+    neighbourRadius: 1.4
+    separationDistance: 0.35
+    separationWeight: 2
+    alignmentWeight: 0.9
+    cohesionWeight: 0.7
+    migrationWeight: 0
+    wanderWeight: 0.8
+    depthRange: {x: -4.5, y: 2}
+    homeHalfLength: 11
+    homeMaxX: 8
+    glassAffinity: 0.7
+    preferredGlassDistance: 1.8
+    curiosity: 0.9
+    fleeRadiusMultiplier: 1
+    fleeStrength: 12
+    currentInfluence: 0.8
+    isPredator: 0
+    stirsWater: 0
+  - name: Queen Angelfish
+    enabled: 0
+    count: 12
+    schoolSize: 2
+    customModel: {fileID: 0}
+    modelForward: 0
+    modelRotationOffset: {x: 0, y: 0, z: 0}
+    modelAnimationSpeed: 1
+    modelAnimationState: 
+    swimDeformStaticModels: 1
+    modelVariants: []
+    bodyType: 0
+    length: 0.35
+    lengthVariance: 0.15
+    bodyHeight: 0.72
+    bodyWidth: 0.1
+    thickestPoint: 0.45
+    peduncle: 0.15
+    noseSharpness: 0.2
+    tailLength: 0.16
+    tailHeight: 0.32
+    tailFork: 0
+    tailAsymmetry: 0
+    dorsalHeight: 0.32
+    dorsalRange: {x: 0.25, y: 0.9}
+    analHeight: 0.28
+    pectoralSize: 0.1
+    raySpan: 2.2
+    topColor: {r: 0.08, g: 0.42, b: 0.75, a: 1}
+    bellyColor: {r: 0.95, g: 0.78, b: 0.1, a: 1}
+    finColor: {r: 0.95, g: 0.72, b: 0.05, a: 1}
+    tailColor: {r: 1, g: 0.8, b: 0.05, a: 1}
+    tailColorStart: 0.17
+    stripeColor: {r: 1, g: 1, b: 1, a: 1}
+    stripeCount: 0
+    stripeWidth: 0.08
+    stripeOffset: 0
+    stripeStrength: 1
+    metallic: 0
+    smoothness: 0.45
+    sheen: 0.35
+    swimFrequency: 2
+    swimAmplitude: 0.06
+    bodyWaves: 0.9
+    turnRate: 110
+    burstCoast: 0.6
+    burstCoastRate: 0.5
+    spots: 0.25
+    finOpacity: 0.85
+    cruiseSpeed: 0.5
+    burstSpeed: 3
+    maxAcceleration: 3
+    banking: 12
+    neighbourRadius: 2
+    separationDistance: 0.6
+    separationWeight: 2
+    alignmentWeight: 0.4
+    cohesionWeight: 0.5
+    migrationWeight: 0
+    wanderWeight: 1
+    depthRange: {x: -4.5, y: 3}
+    homeHalfLength: 10
+    homeMaxX: 8
+    glassAffinity: 0.8
+    preferredGlassDistance: 1.6
+    curiosity: 1
+    fleeRadiusMultiplier: 1
+    fleeStrength: 12
+    currentInfluence: 0.8
+    isPredator: 0
+    stirsWater: 0
+  - name: Manta Ray
+    enabled: 1
+    count: 4
+    schoolSize: 1
+    customModel: {fileID: 0}
+    modelForward: 0
+    modelRotationOffset: {x: 0, y: 0, z: 0}
+    modelAnimationSpeed: 1
+    modelAnimationState: 
+    swimDeformStaticModels: 1
+    modelVariants: []
+    bodyType: 1
+    length: 1.6
+    lengthVariance: 0.2
+    bodyHeight: 0.08
+    bodyWidth: 0.14
+    thickestPoint: 0.38
+    peduncle: 0.15
+    noseSharpness: 0.2
+    tailLength: 0.2
+    tailHeight: 0.25
+    tailFork: 0.4
+    tailAsymmetry: 0
+    dorsalHeight: 0.1
+    dorsalRange: {x: 0.3, y: 0.65}
+    analHeight: 0.06
+    pectoralSize: 0.08
+    raySpan: 2.2
+    topColor: {r: 0.07, g: 0.08, b: 0.1, a: 1}
+    bellyColor: {r: 0.9, g: 0.9, b: 0.92, a: 1}
+    finColor: {r: 0.07, g: 0.08, b: 0.1, a: 1}
+    tailColor: {r: 0.07, g: 0.08, b: 0.1, a: 1}
+    tailColorStart: 0
+    stripeColor: {r: 1, g: 1, b: 1, a: 1}
+    stripeCount: 0
+    stripeWidth: 0.08
+    stripeOffset: 0
+    stripeStrength: 1
+    metallic: 0
+    smoothness: 0.45
+    sheen: 0.1
+    swimFrequency: 0.35
+    swimAmplitude: 0.28
+    bodyWaves: 0.9
+    turnRate: 30
+    burstCoast: 0
+    burstCoastRate: 0.7
+    spots: 0
+    finOpacity: 0.8
+    cruiseSpeed: 0.9
+    burstSpeed: 2.4
+    maxAcceleration: 0.9
+    banking: 25
+    neighbourRadius: 4
+    separationDistance: 3
+    separationWeight: 2
+    alignmentWeight: 0
+    cohesionWeight: 0
+    migrationWeight: 0.8
+    wanderWeight: 0.35
+    depthRange: {x: -4.5, y: 1.5}
+    homeHalfLength: 12
+    homeMaxX: 0
+    glassAffinity: 0.5
+    preferredGlassDistance: 3.5
+    curiosity: 0.35
+    fleeRadiusMultiplier: 1.4
+    fleeStrength: 3.5
+    currentInfluence: 0.3
+    isPredator: 0
+    stirsWater: 1
+  - name: Reef Shark
+    enabled: 1
+    count: 3
+    schoolSize: 1
+    customModel: {fileID: 0}
+    modelForward: 0
+    modelRotationOffset: {x: 0, y: 0, z: 0}
+    modelAnimationSpeed: 1
+    modelAnimationState: 
+    swimDeformStaticModels: 1
+    modelVariants: []
+    bodyType: 0
+    length: 2
+    lengthVariance: 0.15
+    bodyHeight: 0.19
+    bodyWidth: 0.17
+    thickestPoint: 0.33
+    peduncle: 0.06
+    noseSharpness: 1
+    tailLength: 0.25
+    tailHeight: 0.32
+    tailFork: 0.55
+    tailAsymmetry: 0.4
+    dorsalHeight: 0.17
+    dorsalRange: {x: 0.34, y: 0.5}
+    analHeight: 0.04
+    pectoralSize: 0.22
+    raySpan: 2.2
+    topColor: {r: 0.33, g: 0.36, b: 0.4, a: 1}
+    bellyColor: {r: 0.86, g: 0.87, b: 0.87, a: 1}
+    finColor: {r: 0.25, g: 0.27, b: 0.3, a: 1}
+    tailColor: {r: 0.3, g: 0.32, b: 0.36, a: 1}
+    tailColorStart: 0
+    stripeColor: {r: 1, g: 1, b: 1, a: 1}
+    stripeCount: 0
+    stripeWidth: 0.08
+    stripeOffset: 0
+    stripeStrength: 1
+    metallic: 0
+    smoothness: 0.5
+    sheen: 0.05
+    swimFrequency: 0.8
+    swimAmplitude: 0.1
+    bodyWaves: 0.7
+    turnRate: 45
+    burstCoast: 0
+    burstCoastRate: 0.7
+    spots: 0
+    finOpacity: 1
+    cruiseSpeed: 1.2
+    burstSpeed: 3.2
+    maxAcceleration: 1.2
+    banking: 15
+    neighbourRadius: 4
+    separationDistance: 2.5
+    separationWeight: 2
+    alignmentWeight: 0
+    cohesionWeight: 0
+    migrationWeight: 0.9
+    wanderWeight: 0.4
+    depthRange: {x: -3.5, y: 5.5}
+    homeHalfLength: 12
+    homeMaxX: 0
+    glassAffinity: 0.5
+    preferredGlassDistance: 3
+    curiosity: 0.15
+    fleeRadiusMultiplier: 1.2
+    fleeStrength: 4.5
+    currentInfluence: 0.2
+    isPredator: 1
+    stirsWater: 1
+  - name: Cartoon Reef Fish
+    enabled: 0
+    count: 60
+    schoolSize: 6
+    customModel: {fileID: 0}
+    modelForward: 0
+    modelRotationOffset: {x: 0, y: 0, z: 0}
+    modelAnimationSpeed: 1
+    modelAnimationState: 
+    swimDeformStaticModels: 1
+    modelVariants:
+    - model: {fileID: 9077829521121302760, guid: 5a1ef00523c1cde488954ddac7f7258c, type: 3}
+      forward: 3
+      rotationOffset: {x: 0, y: 0, z: 0}
+    - model: {fileID: 4126587882825060627, guid: 80b1054b71af5674a9204ab15800da91, type: 3}
+      forward: 2
+      rotationOffset: {x: 0, y: 0, z: 0}
+    - model: {fileID: 1330265581328548870, guid: 72f29be51fc980842acd3109a9432c94, type: 3}
+      forward: 2
+      rotationOffset: {x: 0, y: 0, z: 0}
+    - model: {fileID: 5816169271128074721, guid: 87cee24624e47cd408243dcdcb590228, type: 3}
+      forward: 2
+      rotationOffset: {x: 0, y: 0, z: 0}
+    - model: {fileID: 759136103094758358, guid: 78cd25d635d2ffc4799aea88955c135b, type: 3}
+      forward: 3
+      rotationOffset: {x: 0, y: 0, z: 0}
+    - model: {fileID: 5593778717764966239, guid: 816a9eb5b5bba4347be327b68b25b3a1, type: 3}
+      forward: 3
+      rotationOffset: {x: 0, y: 0, z: 0}
+    - model: {fileID: 4911896104746679285, guid: 42f17ced6f5b42047842e9699084c3bc, type: 3}
+      forward: 2
+      rotationOffset: {x: 0, y: 0, z: 0}
+    - model: {fileID: 6282642676779199374, guid: 3dad8e0c2b739174f9a76b21ad894ecc, type: 3}
+      forward: 3
+      rotationOffset: {x: 0, y: 0, z: 0}
+    - model: {fileID: 5173111898767020022, guid: 153397d6a57c608448947d7c4185e498, type: 3}
+      forward: 3
+      rotationOffset: {x: 0, y: 0, z: 0}
+    - model: {fileID: 45687443674793385, guid: 5c0fe999fbd66514a8c731eeef039b70, type: 3}
+      forward: 2
+      rotationOffset: {x: 0, y: 0, z: 0}
+    bodyType: 0
+    length: 0.24
+    lengthVariance: 0.15
+    bodyHeight: 0.3
+    bodyWidth: 0.14
+    thickestPoint: 0.38
+    peduncle: 0.15
+    noseSharpness: 0.2
+    tailLength: 0.2
+    tailHeight: 0.25
+    tailFork: 0.4
+    tailAsymmetry: 0
+    dorsalHeight: 0.1
+    dorsalRange: {x: 0.3, y: 0.65}
+    analHeight: 0.06
+    pectoralSize: 0.08
+    raySpan: 2.2
+    topColor: {r: 0.2, g: 0.3, b: 0.5, a: 1}
+    bellyColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
+    finColor: {r: 0.7, g: 0.7, b: 0.75, a: 1}
+    tailColor: {r: 0.7, g: 0.7, b: 0.75, a: 1}
+    tailColorStart: 0
+    stripeColor: {r: 1, g: 1, b: 1, a: 1}
+    stripeCount: 0
+    stripeWidth: 0.08
+    stripeOffset: 0
+    stripeStrength: 1
+    metallic: 0
+    smoothness: 0.55
+    sheen: 0.1
+    swimFrequency: 3.5
+    swimAmplitude: 0.09
+    bodyWaves: 0.8
+    turnRate: 190
+    burstCoast: 0.55
+    burstCoastRate: 0.8
+    spots: 0
+    finOpacity: 1
+    cruiseSpeed: 0.7
+    burstSpeed: 4
+    maxAcceleration: 4.5
+    banking: 10
+    neighbourRadius: 1.6
+    separationDistance: 0.35
+    separationWeight: 2
+    alignmentWeight: 1
+    cohesionWeight: 0.9
+    migrationWeight: 0
+    wanderWeight: 0.6
+    depthRange: {x: -4.5, y: 3.5}
+    homeHalfLength: 14
+    homeMaxX: 0
+    glassAffinity: 0.7
+    preferredGlassDistance: 1.8
+    curiosity: 0.95
+    fleeRadiusMultiplier: 1
+    fleeStrength: 12
+    currentInfluence: 0.8
+    isPredator: 0
+    stirsWater: 0
+  - name: Cartoon Angelfish
+    enabled: 0
+    count: 27
+    schoolSize: 3
+    customModel: {fileID: 0}
+    modelForward: 0
+    modelRotationOffset: {x: 0, y: 0, z: 0}
+    modelAnimationSpeed: 1
+    modelAnimationState: 
+    swimDeformStaticModels: 1
+    modelVariants:
+    - model: {fileID: 212825093551780021, guid: d55f4a947a8e9134e941c5d58c214909, type: 3}
+      forward: 2
+      rotationOffset: {x: 0, y: 0, z: 0}
+    - model: {fileID: 3110849350897451418, guid: ed1e54494197e2e40b5f6f98ea10a976, type: 3}
+      forward: 3
+      rotationOffset: {x: 0, y: 0, z: 0}
+    - model: {fileID: 5619790401659752547, guid: 390b603a24cf59f43939f60e56f0cd96, type: 3}
+      forward: 3
+      rotationOffset: {x: 0, y: 0, z: 0}
+    - model: {fileID: 8176950214675292737, guid: 00cf5f63e19670544a2ab258a7d79476, type: 3}
+      forward: 3
+      rotationOffset: {x: 0, y: 0, z: 0}
+    - model: {fileID: 3909820684726372509, guid: 34f8e4d3a83bbcd49a97d59064a583b8, type: 3}
+      forward: 3
+      rotationOffset: {x: 0, y: 0, z: 0}
+    - model: {fileID: 1222081591810295149, guid: 43ef13f8fcbc1e84ea290244e3a8f43f, type: 3}
+      forward: 3
+      rotationOffset: {x: 0, y: 0, z: 0}
+    - model: {fileID: 4427932324961760469, guid: f107f911afddc2a49b2ec61672c4dc78, type: 3}
+      forward: 3
+      rotationOffset: {x: 0, y: 0, z: 0}
+    - model: {fileID: 6424923805274569655, guid: fc9a1e0e4eb427f4b932525f671ffd19, type: 3}
+      forward: 3
+      rotationOffset: {x: 0, y: 0, z: 0}
+    - model: {fileID: 2368073708772594232, guid: e967a3ec613373943947371d272ca16d, type: 3}
+      forward: 3
+      rotationOffset: {x: 0, y: 0, z: 0}
+    bodyType: 0
+    length: 0.32
+    lengthVariance: 0.15
+    bodyHeight: 0.3
+    bodyWidth: 0.14
+    thickestPoint: 0.38
+    peduncle: 0.15
+    noseSharpness: 0.2
+    tailLength: 0.2
+    tailHeight: 0.25
+    tailFork: 0.4
+    tailAsymmetry: 0
+    dorsalHeight: 0.1
+    dorsalRange: {x: 0.3, y: 0.65}
+    analHeight: 0.06
+    pectoralSize: 0.08
+    raySpan: 2.2
+    topColor: {r: 0.2, g: 0.3, b: 0.5, a: 1}
+    bellyColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
+    finColor: {r: 0.7, g: 0.7, b: 0.75, a: 1}
+    tailColor: {r: 0.7, g: 0.7, b: 0.75, a: 1}
+    tailColorStart: 0
+    stripeColor: {r: 1, g: 1, b: 1, a: 1}
+    stripeCount: 0
+    stripeWidth: 0.08
+    stripeOffset: 0
+    stripeStrength: 1
+    metallic: 0
+    smoothness: 0.55
+    sheen: 0.1
+    swimFrequency: 2.2
+    swimAmplitude: 0.06
+    bodyWaves: 0.7
+    turnRate: 110
+    burstCoast: 0.6
+    burstCoastRate: 0.5
+    spots: 0
+    finOpacity: 1
+    cruiseSpeed: 0.5
+    burstSpeed: 3
+    maxAcceleration: 3
+    banking: 12
+    neighbourRadius: 2
+    separationDistance: 0.6
+    separationWeight: 2
+    alignmentWeight: 0.4
+    cohesionWeight: 0.5
+    migrationWeight: 0
+    wanderWeight: 1
+    depthRange: {x: -4.5, y: 3}
+    homeHalfLength: 12
+    homeMaxX: 0
+    glassAffinity: 0.85
+    preferredGlassDistance: 1.5
+    curiosity: 1
+    fleeRadiusMultiplier: 1
+    fleeStrength: 10
+    currentInfluence: 0.8
+    isPredator: 0
+    stirsWater: 0
+  - name: Cartoon Racer
+    enabled: 0
+    count: 48
+    schoolSize: 6
+    customModel: {fileID: 0}
+    modelForward: 0
+    modelRotationOffset: {x: 0, y: 0, z: 0}
+    modelAnimationSpeed: 1
+    modelAnimationState: 
+    swimDeformStaticModels: 1
+    modelVariants:
+    - model: {fileID: 5420085265247095813, guid: 5d87a3d95cb8d5645bd9d2f33c7657f1, type: 3}
+      forward: 3
+      rotationOffset: {x: 0, y: 0, z: 0}
+    - model: {fileID: 4831935916619505915, guid: 70b02c7c784f74143b7bf0df0dbb47ae, type: 3}
+      forward: 3
+      rotationOffset: {x: 0, y: 0, z: 0}
+    - model: {fileID: 2696095758793608573, guid: ef793242d1d3759448aea0bb0df6e14f, type: 3}
+      forward: 3
+      rotationOffset: {x: 0, y: 0, z: 0}
+    - model: {fileID: 7194222499713911102, guid: e1b29ed44df018745a4b4d34c9dd0ce3, type: 3}
+      forward: 3
+      rotationOffset: {x: 0, y: 0, z: 0}
+    - model: {fileID: 8373451442108836479, guid: 96196f5a5c62edd4292f5ce20b85db5a, type: 3}
+      forward: 2
+      rotationOffset: {x: 0, y: 0, z: 0}
+    - model: {fileID: 8195177142209359324, guid: f64aafcb07012e644a1ebe4bf0a4601a, type: 3}
+      forward: 3
+      rotationOffset: {x: 0, y: 0, z: 0}
+    - model: {fileID: 7127955288253549044, guid: e1d6724a107947745a7ad159190955ca, type: 3}
+      forward: 3
+      rotationOffset: {x: 0, y: 0, z: 0}
+    - model: {fileID: 617129400918439220, guid: b6fbe590019e86247b6b21cee0f5b669, type: 3}
+      forward: 3
+      rotationOffset: {x: 0, y: 0, z: 0}
+    bodyType: 0
+    length: 0.3
+    lengthVariance: 0.12
+    bodyHeight: 0.3
+    bodyWidth: 0.14
+    thickestPoint: 0.38
+    peduncle: 0.15
+    noseSharpness: 0.2
+    tailLength: 0.2
+    tailHeight: 0.25
+    tailFork: 0.4
+    tailAsymmetry: 0
+    dorsalHeight: 0.1
+    dorsalRange: {x: 0.3, y: 0.65}
+    analHeight: 0.06
+    pectoralSize: 0.08
+    raySpan: 2.2
+    topColor: {r: 0.2, g: 0.3, b: 0.5, a: 1}
+    bellyColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
+    finColor: {r: 0.7, g: 0.7, b: 0.75, a: 1}
+    tailColor: {r: 0.7, g: 0.7, b: 0.75, a: 1}
+    tailColorStart: 0
+    stripeColor: {r: 1, g: 1, b: 1, a: 1}
+    stripeCount: 0
+    stripeWidth: 0.08
+    stripeOffset: 0
+    stripeStrength: 1
+    metallic: 0
+    smoothness: 0.55
+    sheen: 0.1
+    swimFrequency: 4
+    swimAmplitude: 0.11
+    bodyWaves: 0.9
+    turnRate: 200
+    burstCoast: 0.1
+    burstCoastRate: 0.7
+    spots: 0
+    finOpacity: 1
+    cruiseSpeed: 1.2
+    burstSpeed: 5
+    maxAcceleration: 6
+    banking: 8
+    neighbourRadius: 1.8
+    separationDistance: 0.4
+    separationWeight: 2.5
+    alignmentWeight: 1.8
+    cohesionWeight: 1.2
+    migrationWeight: 0.5
+    wanderWeight: 0.3
+    depthRange: {x: -3.5, y: 5}
+    homeHalfLength: 12
+    homeMaxX: 0
+    glassAffinity: 0.5
+    preferredGlassDistance: 2.5
+    curiosity: 0.5
+    fleeRadiusMultiplier: 1
+    fleeStrength: 14
+    currentInfluence: 0.8
+    isPredator: 0
+    stirsWater: 0
+  - name: Cartoon Squid
+    enabled: 0
+    count: 5
+    schoolSize: 1
+    customModel: {fileID: 0}
+    modelForward: 0
+    modelRotationOffset: {x: 0, y: 0, z: 0}
+    modelAnimationSpeed: 1
+    modelAnimationState: 
+    swimDeformStaticModels: 1
+    modelVariants:
+    - model: {fileID: 4133908778649777079, guid: c1b6dc03d7922fd4b81cc2a274f5a7fe, type: 3}
+      forward: 3
+      rotationOffset: {x: 0, y: 0, z: 0}
+    bodyType: 0
+    length: 0.35
+    lengthVariance: 0.1
+    bodyHeight: 0.3
+    bodyWidth: 0.14
+    thickestPoint: 0.38
+    peduncle: 0.15
+    noseSharpness: 0.2
+    tailLength: 0.2
+    tailHeight: 0.25
+    tailFork: 0.4
+    tailAsymmetry: 0
+    dorsalHeight: 0.1
+    dorsalRange: {x: 0.3, y: 0.65}
+    analHeight: 0.06
+    pectoralSize: 0.08
+    raySpan: 2.2
+    topColor: {r: 0.2, g: 0.3, b: 0.5, a: 1}
+    bellyColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
+    finColor: {r: 0.7, g: 0.7, b: 0.75, a: 1}
+    tailColor: {r: 0.7, g: 0.7, b: 0.75, a: 1}
+    tailColorStart: 0
+    stripeColor: {r: 1, g: 1, b: 1, a: 1}
+    stripeCount: 0
+    stripeWidth: 0.08
+    stripeOffset: 0
+    stripeStrength: 1
+    metallic: 0
+    smoothness: 0.55
+    sheen: 0.1
+    swimFrequency: 1
+    swimAmplitude: 0.02
+    bodyWaves: 0.5
+    turnRate: 90
+    burstCoast: 1
+    burstCoastRate: 0.8
+    spots: 0
+    finOpacity: 1
+    cruiseSpeed: 0.6
+    burstSpeed: 3.5
+    maxAcceleration: 3
+    banking: 4
+    neighbourRadius: 2
+    separationDistance: 1
+    separationWeight: 2
+    alignmentWeight: 0
+    cohesionWeight: 0
+    migrationWeight: 0
+    wanderWeight: 0.8
+    depthRange: {x: -4, y: 3}
+    homeHalfLength: 12
+    homeMaxX: 0
+    glassAffinity: 0.6
+    preferredGlassDistance: 2
+    curiosity: 0.6
+    fleeRadiusMultiplier: 1
+    fleeStrength: 10
+    currentInfluence: 0.8
+    isPredator: 0
+    stirsWater: 0
+  - name: Reef Angelfish
+    enabled: 1
+    count: 15
+    schoolSize: 3
+    customModel: {fileID: 0}
+    modelForward: 0
+    modelRotationOffset: {x: 0, y: 0, z: 0}
+    modelAnimationSpeed: 0.8
+    modelAnimationState: swim
+    swimDeformStaticModels: 1
+    modelVariants:
+    - model: {fileID: 1585281933219424, guid: 8e1dc728c15d1a94fb94ba0e0e3089d2, type: 3}
+      forward: 0
+      rotationOffset: {x: 0, y: 0, z: 0}
+    - model: {fileID: 1751655112806586, guid: 1b1e56ddd8ae9704fa98f99572ef687d, type: 3}
+      forward: 0
+      rotationOffset: {x: 0, y: 0, z: 0}
+    - model: {fileID: 1057825031112826, guid: e9e296ab7cbc7374994b1563cd40365d, type: 3}
+      forward: 0
+      rotationOffset: {x: 0, y: 0, z: 0}
+    - model: {fileID: 1128993657145248, guid: c0edeeb12038b0a4fb0b72336bcd1e02, type: 3}
+      forward: 0
+      rotationOffset: {x: 0, y: 0, z: 0}
+    - model: {fileID: 1239249351656130, guid: 3c979b709ff19944cac5e88d9b30759d, type: 3}
+      forward: 0
+      rotationOffset: {x: 0, y: 0, z: 0}
+    bodyType: 0
+    length: 0.34
+    lengthVariance: 0.12
+    bodyHeight: 0.3
+    bodyWidth: 0.14
+    thickestPoint: 0.38
+    peduncle: 0.15
+    noseSharpness: 0.2
+    tailLength: 0.2
+    tailHeight: 0.25
+    tailFork: 0.4
+    tailAsymmetry: 0
+    dorsalHeight: 0.1
+    dorsalRange: {x: 0.3, y: 0.65}
+    analHeight: 0.06
+    pectoralSize: 0.08
+    raySpan: 2.2
+    topColor: {r: 0.2, g: 0.3, b: 0.5, a: 1}
+    bellyColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
+    finColor: {r: 0.7, g: 0.7, b: 0.75, a: 1}
+    tailColor: {r: 0.7, g: 0.7, b: 0.75, a: 1}
+    tailColorStart: 0
+    stripeColor: {r: 1, g: 1, b: 1, a: 1}
+    stripeCount: 0
+    stripeWidth: 0.08
+    stripeOffset: 0
+    stripeStrength: 1
+    metallic: 0
+    smoothness: 0.6
+    sheen: 0.2
+    swimFrequency: 3
+    swimAmplitude: 0.1
+    bodyWaves: 0.9
+    turnRate: 110
+    burstCoast: 0.3
+    burstCoastRate: 0.7
+    spots: 0
+    finOpacity: 0.8
+    cruiseSpeed: 0.5
+    burstSpeed: 3
+    maxAcceleration: 3
+    banking: 12
+    neighbourRadius: 2
+    separationDistance: 0.6
+    separationWeight: 2
+    alignmentWeight: 0.4
+    cohesionWeight: 0.5
+    migrationWeight: 0
+    wanderWeight: 1
+    depthRange: {x: -4.5, y: 3}
+    homeHalfLength: 12
+    homeMaxX: 0
+    glassAffinity: 0.85
+    preferredGlassDistance: 1.5
+    curiosity: 1
+    fleeRadiusMultiplier: 1
+    fleeStrength: 10
+    currentInfluence: 0.8
+    isPredator: 0
+    stirsWater: 0
+  - name: Reef Tangs
+    enabled: 1
+    count: 30
+    schoolSize: 10
+    customModel: {fileID: 0}
+    modelForward: 0
+    modelRotationOffset: {x: 0, y: 0, z: 0}
+    modelAnimationSpeed: 1
+    modelAnimationState: swim
+    swimDeformStaticModels: 1
+    modelVariants:
+    - model: {fileID: 1885155026214872, guid: cb862e4dec4eda640bc5f694c915ae5a, type: 3}
+      forward: 0
+      rotationOffset: {x: 0, y: 0, z: 0}
+    - model: {fileID: 1340460572541762, guid: 2dcc1e9ccbd66d34989b77210da02976, type: 3}
+      forward: 0
+      rotationOffset: {x: 0, y: 0, z: 0}
+    - model: {fileID: 1410397070717316, guid: af65606eeff54d14ba8bc04e8a80394c, type: 3}
+      forward: 0
+      rotationOffset: {x: 0, y: 0, z: 0}
+    bodyType: 0
+    length: 0.28
+    lengthVariance: 0.12
+    bodyHeight: 0.3
+    bodyWidth: 0.14
+    thickestPoint: 0.38
+    peduncle: 0.15
+    noseSharpness: 0.2
+    tailLength: 0.2
+    tailHeight: 0.25
+    tailFork: 0.4
+    tailAsymmetry: 0
+    dorsalHeight: 0.1
+    dorsalRange: {x: 0.3, y: 0.65}
+    analHeight: 0.06
+    pectoralSize: 0.08
+    raySpan: 2.2
+    topColor: {r: 0.2, g: 0.3, b: 0.5, a: 1}
+    bellyColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
+    finColor: {r: 0.7, g: 0.7, b: 0.75, a: 1}
+    tailColor: {r: 0.7, g: 0.7, b: 0.75, a: 1}
+    tailColorStart: 0
+    stripeColor: {r: 1, g: 1, b: 1, a: 1}
+    stripeCount: 0
+    stripeWidth: 0.08
+    stripeOffset: 0
+    stripeStrength: 1
+    metallic: 0
+    smoothness: 0.6
+    sheen: 0.2
+    swimFrequency: 3
+    swimAmplitude: 0.1
+    bodyWaves: 0.9
+    turnRate: 170
+    burstCoast: 0.2
+    burstCoastRate: 0.7
+    spots: 0
+    finOpacity: 0.8
+    cruiseSpeed: 0.9
+    burstSpeed: 4.5
+    maxAcceleration: 4.5
+    banking: 12
+    neighbourRadius: 1.8
+    separationDistance: 0.45
+    separationWeight: 2
+    alignmentWeight: 1.3
+    cohesionWeight: 0.9
+    migrationWeight: 0.45
+    wanderWeight: 0.4
+    depthRange: {x: -4, y: 3.5}
+    homeHalfLength: 12
+    homeMaxX: 0
+    glassAffinity: 0.65
+    preferredGlassDistance: 2
+    curiosity: 0.9
+    fleeRadiusMultiplier: 1
+    fleeStrength: 12
+    currentInfluence: 0.8
+    isPredator: 0
+    stirsWater: 0
+  - name: Butterflyfish
+    enabled: 1
+    count: 28
+    schoolSize: 4
+    customModel: {fileID: 0}
+    modelForward: 0
+    modelRotationOffset: {x: 0, y: 0, z: 0}
+    modelAnimationSpeed: 1
+    modelAnimationState: swim
+    swimDeformStaticModels: 1
+    modelVariants:
+    - model: {fileID: 1583011343729554, guid: 9edbf20907227f54d8ab4008e2df4fbb, type: 3}
+      forward: 0
+      rotationOffset: {x: 0, y: 0, z: 0}
+    - model: {fileID: 1370058809408830, guid: 47eb81d4d61b7464e994389e615b1393, type: 3}
+      forward: 0
+      rotationOffset: {x: 0, y: 0, z: 0}
+    - model: {fileID: 1654500576097994, guid: 0deca73f4f2bd004db1570bb3f977cf9, type: 3}
+      forward: 0
+      rotationOffset: {x: 0, y: 0, z: 0}
+    - model: {fileID: 1335115589084804, guid: 41543ab45c82c8641a606ddf4c52eb0b, type: 3}
+      forward: 0
+      rotationOffset: {x: 0, y: 0, z: 0}
+    - model: {fileID: 1474988304098868, guid: 96b3c520b53c79e47948662ae6efd24d, type: 3}
+      forward: 0
+      rotationOffset: {x: 0, y: 0, z: 0}
+    - model: {fileID: 1945690741461250, guid: b775e94850e3bc24d9d7f5949faa01b4, type: 3}
+      forward: 0
+      rotationOffset: {x: 0, y: 0, z: 0}
+    - model: {fileID: 1144274577932934, guid: 7015b623a04a499409c98dede26fdf1b, type: 3}
+      forward: 0
+      rotationOffset: {x: 0, y: 0, z: 0}
+    bodyType: 0
+    length: 0.2
+    lengthVariance: 0.15
+    bodyHeight: 0.3
+    bodyWidth: 0.14
+    thickestPoint: 0.38
+    peduncle: 0.15
+    noseSharpness: 0.2
+    tailLength: 0.2
+    tailHeight: 0.25
+    tailFork: 0.4
+    tailAsymmetry: 0
+    dorsalHeight: 0.1
+    dorsalRange: {x: 0.3, y: 0.65}
+    analHeight: 0.06
+    pectoralSize: 0.08
+    raySpan: 2.2
+    topColor: {r: 0.2, g: 0.3, b: 0.5, a: 1}
+    bellyColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
+    finColor: {r: 0.7, g: 0.7, b: 0.75, a: 1}
+    tailColor: {r: 0.7, g: 0.7, b: 0.75, a: 1}
+    tailColorStart: 0
+    stripeColor: {r: 1, g: 1, b: 1, a: 1}
+    stripeCount: 0
+    stripeWidth: 0.08
+    stripeOffset: 0
+    stripeStrength: 1
+    metallic: 0
+    smoothness: 0.6
+    sheen: 0.2
+    swimFrequency: 3
+    swimAmplitude: 0.1
+    bodyWaves: 0.9
+    turnRate: 190
+    burstCoast: 0.4
+    burstCoastRate: 0.7
+    spots: 0
+    finOpacity: 0.8
+    cruiseSpeed: 0.6
+    burstSpeed: 3.8
+    maxAcceleration: 4
+    banking: 12
+    neighbourRadius: 1.4
+    separationDistance: 0.35
+    separationWeight: 2
+    alignmentWeight: 0.7
+    cohesionWeight: 0.8
+    migrationWeight: 0
+    wanderWeight: 0.8
+    depthRange: {x: -5, y: 2.5}
+    homeHalfLength: 14
+    homeMaxX: 0
+    glassAffinity: 0.75
+    preferredGlassDistance: 1.6
+    curiosity: 0.95
+    fleeRadiusMultiplier: 1
+    fleeStrength: 12
+    currentInfluence: 0.8
+    isPredator: 0
+    stirsWater: 0
+  - name: Anthias & Grammas
+    enabled: 1
+    count: 32
+    schoolSize: 16
+    customModel: {fileID: 0}
+    modelForward: 0
+    modelRotationOffset: {x: 0, y: 0, z: 0}
+    modelAnimationSpeed: 1.2
+    modelAnimationState: swim
+    swimDeformStaticModels: 1
+    modelVariants:
+    - model: {fileID: 1300476400001974, guid: 9422af1b931a5be4d95b1a58c4d6e1a6, type: 3}
+      forward: 0
+      rotationOffset: {x: 0, y: 0, z: 0}
+    - model: {fileID: 1378062498503158, guid: 001d0e5f50b165a4db48d5ad0cd968a4, type: 3}
+      forward: 0
+      rotationOffset: {x: 0, y: 0, z: 0}
+    bodyType: 0
+    length: 0.13
+    lengthVariance: 0.15
+    bodyHeight: 0.3
+    bodyWidth: 0.14
+    thickestPoint: 0.38
+    peduncle: 0.15
+    noseSharpness: 0.2
+    tailLength: 0.2
+    tailHeight: 0.25
+    tailFork: 0.4
+    tailAsymmetry: 0
+    dorsalHeight: 0.1
+    dorsalRange: {x: 0.3, y: 0.65}
+    analHeight: 0.06
+    pectoralSize: 0.08
+    raySpan: 2.2
+    topColor: {r: 0.2, g: 0.3, b: 0.5, a: 1}
+    bellyColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
+    finColor: {r: 0.7, g: 0.7, b: 0.75, a: 1}
+    tailColor: {r: 0.7, g: 0.7, b: 0.75, a: 1}
+    tailColorStart: 0
+    stripeColor: {r: 1, g: 1, b: 1, a: 1}
+    stripeCount: 0
+    stripeWidth: 0.08
+    stripeOffset: 0
+    stripeStrength: 1
+    metallic: 0
+    smoothness: 0.6
+    sheen: 0.2
+    swimFrequency: 3
+    swimAmplitude: 0.1
+    bodyWaves: 0.9
+    turnRate: 230
+    burstCoast: 0.3
+    burstCoastRate: 0.7
+    spots: 0
+    finOpacity: 0.8
+    cruiseSpeed: 0.6
+    burstSpeed: 3.5
+    maxAcceleration: 5
+    banking: 12
+    neighbourRadius: 1.2
+    separationDistance: 0.22
+    separationWeight: 2
+    alignmentWeight: 1.2
+    cohesionWeight: 1.1
+    migrationWeight: 0
+    wanderWeight: 0.6
+    depthRange: {x: -5.2, y: -1}
+    homeHalfLength: 10
+    homeMaxX: 7
+    glassAffinity: 0
+    preferredGlassDistance: 2.5
+    curiosity: 0.8
+    fleeRadiusMultiplier: 1
+    fleeStrength: 13
+    currentInfluence: 0.8
+    isPredator: 0
+    stirsWater: 0
+  - name: Mandarin Fish
+    enabled: 1
+    count: 6
+    schoolSize: 1
+    customModel: {fileID: 0}
+    modelForward: 0
+    modelRotationOffset: {x: 0, y: 0, z: 0}
+    modelAnimationSpeed: 0.7
+    modelAnimationState: swim
+    swimDeformStaticModels: 1
+    modelVariants:
+    - model: {fileID: 1453807170589474, guid: 44e482ab76ae9084ca8a9d3d876f3052, type: 3}
+      forward: 0
+      rotationOffset: {x: 0, y: 0, z: 0}
+    bodyType: 0
+    length: 0.12
+    lengthVariance: 0.1
+    bodyHeight: 0.3
+    bodyWidth: 0.14
+    thickestPoint: 0.38
+    peduncle: 0.15
+    noseSharpness: 0.2
+    tailLength: 0.2
+    tailHeight: 0.25
+    tailFork: 0.4
+    tailAsymmetry: 0
+    dorsalHeight: 0.1
+    dorsalRange: {x: 0.3, y: 0.65}
+    analHeight: 0.06
+    pectoralSize: 0.08
+    raySpan: 2.2
+    topColor: {r: 0.2, g: 0.3, b: 0.5, a: 1}
+    bellyColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
+    finColor: {r: 0.7, g: 0.7, b: 0.75, a: 1}
+    tailColor: {r: 0.7, g: 0.7, b: 0.75, a: 1}
+    tailColorStart: 0
+    stripeColor: {r: 1, g: 1, b: 1, a: 1}
+    stripeCount: 0
+    stripeWidth: 0.08
+    stripeOffset: 0
+    stripeStrength: 1
+    metallic: 0
+    smoothness: 0.6
+    sheen: 0.2
+    swimFrequency: 3
+    swimAmplitude: 0.1
+    bodyWaves: 0.9
+    turnRate: 120
+    burstCoast: 0.7
+    burstCoastRate: 0.5
+    spots: 0
+    finOpacity: 0.8
+    cruiseSpeed: 0.25
+    burstSpeed: 2
+    maxAcceleration: 2
+    banking: 12
+    neighbourRadius: 1
+    separationDistance: 0.5
+    separationWeight: 2
+    alignmentWeight: 0
+    cohesionWeight: 0
+    migrationWeight: 0
+    wanderWeight: 1
+    depthRange: {x: -5.8, y: -4.5}
+    homeHalfLength: 7
+    homeMaxX: 5
+    glassAffinity: 0
+    preferredGlassDistance: 2.5
+    curiosity: 0.7
+    fleeRadiusMultiplier: 1
+    fleeStrength: 8
+    currentInfluence: 0.8
+    isPredator: 0
+    stirsWater: 0
+  - name: Perch
+    enabled: 1
+    count: 24
+    schoolSize: 12
+    customModel: {fileID: 0}
+    modelForward: 0
+    modelRotationOffset: {x: 0, y: 0, z: 0}
+    modelAnimationSpeed: 1
+    modelAnimationState: swim
+    swimDeformStaticModels: 1
+    modelVariants:
+    - model: {fileID: 1883305268910172, guid: 1df6245a094d86148b6dcb42d2f9ab18, type: 3}
+      forward: 0
+      rotationOffset: {x: 0, y: 0, z: 0}
+    bodyType: 0
+    length: 0.22
+    lengthVariance: 0.12
+    bodyHeight: 0.3
+    bodyWidth: 0.14
+    thickestPoint: 0.38
+    peduncle: 0.15
+    noseSharpness: 0.2
+    tailLength: 0.2
+    tailHeight: 0.25
+    tailFork: 0.4
+    tailAsymmetry: 0
+    dorsalHeight: 0.1
+    dorsalRange: {x: 0.3, y: 0.65}
+    analHeight: 0.06
+    pectoralSize: 0.08
+    raySpan: 2.2
+    topColor: {r: 0.2, g: 0.3, b: 0.5, a: 1}
+    bellyColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
+    finColor: {r: 0.7, g: 0.7, b: 0.75, a: 1}
+    tailColor: {r: 0.7, g: 0.7, b: 0.75, a: 1}
+    tailColorStart: 0
+    stripeColor: {r: 1, g: 1, b: 1, a: 1}
+    stripeCount: 0
+    stripeWidth: 0.08
+    stripeOffset: 0
+    stripeStrength: 1
+    metallic: 0
+    smoothness: 0.6
+    sheen: 0.2
+    swimFrequency: 3
+    swimAmplitude: 0.1
+    bodyWaves: 0.9
+    turnRate: 200
+    burstCoast: 0.1
+    burstCoastRate: 0.7
+    spots: 0
+    finOpacity: 0.8
+    cruiseSpeed: 1.1
+    burstSpeed: 4.5
+    maxAcceleration: 5.5
+    banking: 12
+    neighbourRadius: 1.6
+    separationDistance: 0.3
+    separationWeight: 2
+    alignmentWeight: 1.8
+    cohesionWeight: 1.3
+    migrationWeight: 0.5
+    wanderWeight: 0.3
+    depthRange: {x: -3, y: 5}
+    homeHalfLength: 12
+    homeMaxX: 0
+    glassAffinity: 0.4
+    preferredGlassDistance: 3
+    curiosity: 0.4
+    fleeRadiusMultiplier: 1
+    fleeStrength: 14
+    currentInfluence: 0.8
+    isPredator: 0
+    stirsWater: 0
+  environmentProps:
+  - prefab: {fileID: 1437628519217258, guid: 320ca11735a1c124fa654af3a10e0e38, type: 3}
+    count: 6
+    placement: 0
+    minScale: 1.6
+    maxScale: 2.6
+    obstacle: 1
+  - prefab: {fileID: 1437628519217258, guid: 320ca11735a1c124fa654af3a10e0e38, type: 3}
+    count: 2
+    placement: 1
+    minScale: 0.8
+    maxScale: 1.1
+    obstacle: 1
+  showOverlay: 0
+--- !u!1 &769580527
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 769580530}
+  - component: {fileID: 769580528}
+  - component: {fileID: 769580529}
+  m_Layer: 0
+  m_Name: Right Wall Camera (Display 3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!20 &769580528
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769580527}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.015, g: 0.16, b: 0.24, a: 1}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.05
+  far clip plane: 160
+  field of view: 90
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 2
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!114 &769580529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769580527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 1
+  m_RequiresOpaqueTextureOption: 1
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 1
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
+  m_Version: 2
+--- !u!4 &769580530
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769580527}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 1.6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 559758155}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1878710687
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1878710690}
+  - component: {fileID: 1878710688}
+  - component: {fileID: 1878710689}
+  m_Layer: 0
+  m_Name: Floor Camera (Display 4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!20 &1878710688
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878710687}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.015, g: 0.16, b: 0.24, a: 1}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.05
+  far clip plane: 160
+  field of view: 90
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 3
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!114 &1878710689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878710687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 1
+  m_RequiresOpaqueTextureOption: 1
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 1
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
+  m_Version: 2
+--- !u!4 &1878710690
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878710687}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 1.6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 559758155}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1938726509
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1938726513}
+  - component: {fileID: 1938726510}
+  - component: {fileID: 1938726512}
+  - component: {fileID: 1938726511}
+  m_Layer: 0
+  m_Name: Left Wall Camera (Display 2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!20 &1938726510
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938726509}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.015, g: 0.16, b: 0.24, a: 1}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.05
+  far clip plane: 160
+  field of view: 90
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 1
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!81 &1938726511
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938726509}
+  m_Enabled: 1
+--- !u!114 &1938726512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938726509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 1
+  m_RequiresOpaqueTextureOption: 1
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 1
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
+  m_Version: 2
+--- !u!4 &1938726513
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938726509}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 1.6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 559758155}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1660057539 &9223372036854775807
+SceneRoots:
+  m_ObjectHideFlags: 0
+  m_Roots:
+  - {fileID: 559758155}

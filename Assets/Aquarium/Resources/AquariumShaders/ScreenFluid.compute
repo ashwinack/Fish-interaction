@@ -1,0 +1,141 @@
+﻿// Per-screen 2D stable-fluids solver (Stam) used for the liquid look of the touch water layer:
+// fingers push velocity and inject "dye" (a disturbance density the shader turns into refraction and
+// shimmer). Everything is in texel units: velocity in texels per second.
+// Step order: Advect (velocity + dye) -> Splat -> Curl -> Vorticity -> Divergence -> Jacobi xN -> Gradient
+
+#pragma kernel Advect
+#pragma kernel Splat
+#pragma kernel Curl
+#pragma kernel Vorticity
+#pragma kernel Divergence
+#pragma kernel Jacobi
+#pragma kernel Gradient
+#pragma kernel Clear
+
+struct FluidSplat
+{
+    float2 uv;      // 0..1
+    float2 force;   // texels / s added at the centre
+    float  radius;  // texels
+    float  dye;     // dye added at the centre
+    float2 pad;
+};
+
+Texture2D<float2>   _VelIn;
+RWTexture2D<float2> _VelOut;
+Texture2D<float>    _DyeIn;
+RWTexture2D<float>  _DyeOut;
+Texture2D<float>    _CurlIn;
+RWTexture2D<float>  _CurlOut;
+Texture2D<float>    _DivIn;
+RWTexture2D<float>  _DivOut;
+Texture2D<float>    _PIn;
+RWTexture2D<float>  _POut;
+StructuredBuffer<FluidSplat> _Splats;
+SamplerState linearClampSampler;
+
+int2  _Size;
+float _Dt;
+float _VelDissipation;
+float _DyeDissipation;
+float _Vorticity;
+int   _SplatCount;
+
+float2 V(int2 c) { return _VelIn[clamp(c, int2(0, 0), _Size - 1)]; }
+float  C(int2 c) { return _CurlIn[clamp(c, int2(0, 0), _Size - 1)]; }
+float  P(int2 c) { return _PIn[clamp(c, int2(0, 0), _Size - 1)]; }
+
+[numthreads(8, 8, 1)]
+void Advect(uint3 id : SV_DispatchThreadID)
+{
+    if (any(id.xy >= (uint2)_Size)) return;
+    float2 vel = _VelIn[id.xy];
+    float2 back = (float2(id.xy) + 0.5 - vel * _Dt) / float2(_Size);
+    _VelOut[id.xy] = _VelIn.SampleLevel(linearClampSampler, back, 0) / (1.0 + _VelDissipation * _Dt);
+    _DyeOut[id.xy] = _DyeIn.SampleLevel(linearClampSampler, back, 0) / (1.0 + _DyeDissipation * _Dt);
+}
+
+[numthreads(8, 8, 1)]
+void Splat(uint3 id : SV_DispatchThreadID)
+{
+    if (any(id.xy >= (uint2)_Size)) return;
+    float2 vel = _VelIn[id.xy];
+    float dye = _DyeIn[id.xy];
+    float2 p = float2(id.xy) + 0.5;
+    for (int i = 0; i < _SplatCount; i++)
+    {
+        FluidSplat s = _Splats[i];
+        float2 d = p - s.uv * float2(_Size);
+        float g = exp(-dot(d, d) / max(s.radius * s.radius, 1e-3));
+        vel += s.force * g;
+        dye += s.dye * g;
+    }
+    _VelOut[id.xy] = vel;
+    _DyeOut[id.xy] = min(dye, 1.0);
+}
+
+[numthreads(8, 8, 1)]
+void Curl(uint3 id : SV_DispatchThreadID)
+{
+    if (any(id.xy >= (uint2)_Size)) return;
+    int2 c = int2(id.xy);
+    _CurlOut[c] = 0.5 * ((V(c + int2(1, 0)).y - V(c - int2(1, 0)).y) - (V(c + int2(0, 1)).x - V(c - int2(0, 1)).x));
+}
+
+[numthreads(8, 8, 1)]
+void Vorticity(uint3 id : SV_DispatchThreadID)
+{
+    if (any(id.xy >= (uint2)_Size)) return;
+    int2 c = int2(id.xy);
+    float2 grad = 0.5 * float2(abs(C(c + int2(1, 0))) - abs(C(c - int2(1, 0))), abs(C(c + int2(0, 1))) - abs(C(c - int2(0, 1))));
+    float len = length(grad);
+    float2 vel = _VelIn[c];
+    if (len > 1e-5)
+    {
+        float2 n = grad / len;
+        float w = C(c);
+        vel += _Vorticity * float2(n.y * w, -n.x * w) * _Dt;
+    }
+    _VelOut[c] = vel;
+}
+
+[numthreads(8, 8, 1)]
+void Divergence(uint3 id : SV_DispatchThreadID)
+{
+    if (any(id.xy >= (uint2)_Size)) return;
+    int2 c = int2(id.xy);
+    float uR = V(c + int2(1, 0)).x, uL = V(c - int2(1, 0)).x;
+    float vT = V(c + int2(0, 1)).y, vB = V(c - int2(0, 1)).y;
+    // Solid screen frame: no flow through the edges
+    if (c.x == 0) uL = -_VelIn[c].x;
+    if (c.x == _Size.x - 1) uR = -_VelIn[c].x;
+    if (c.y == 0) vB = -_VelIn[c].y;
+    if (c.y == _Size.y - 1) vT = -_VelIn[c].y;
+    _DivOut[c] = 0.5 * ((uR - uL) + (vT - vB));
+}
+
+[numthreads(8, 8, 1)]
+void Jacobi(uint3 id : SV_DispatchThreadID)
+{
+    if (any(id.xy >= (uint2)_Size)) return;
+    int2 c = int2(id.xy);
+    _POut[c] = (P(c - int2(1, 0)) + P(c + int2(1, 0)) + P(c - int2(0, 1)) + P(c + int2(0, 1)) - _DivIn[c]) * 0.25;
+}
+
+[numthreads(8, 8, 1)]
+void Gradient(uint3 id : SV_DispatchThreadID)
+{
+    if (any(id.xy >= (uint2)_Size)) return;
+    int2 c = int2(id.xy);
+    float2 vel = _VelIn[c] - 0.5 * float2(P(c + int2(1, 0)) - P(c - int2(1, 0)), P(c + int2(0, 1)) - P(c - int2(0, 1)));
+    _VelOut[c] = vel;
+}
+
+[numthreads(8, 8, 1)]
+void Clear(uint3 id : SV_DispatchThreadID)
+{
+    if (any(id.xy >= (uint2)_Size)) return;
+    _VelOut[id.xy] = float2(0, 0);
+    _DyeOut[id.xy] = 0;
+    _POut[id.xy] = 0;
+}

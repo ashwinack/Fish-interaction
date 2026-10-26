@@ -1,0 +1,79 @@
+// Shallow-water style wave simulation for the touch-reactive water layer on each screen.
+// State texture: R = surface height (m), G = vertical velocity (m/s).
+//   v += (c^2 * laplacian(h) + nu * laplacian(v)) * dt;  v *= exp(-damping * dt);  h += v * dt
+// Semi-implicit (symplectic) Euler, stable while c * dt / dx < ~0.7 (the C# side substeps to stay below 0.5).
+// Touches add a downward velocity impulse (a finger pressing into the water); a moving finger leaves a wake.
+
+#pragma kernel Step
+#pragma kernel Clear
+
+struct RippleSplat
+{
+    float2 uv;       // 0..1 across the screen
+    float  radius;   // metres
+    float  strength; // velocity impulse (m/s), negative pushes the surface down
+};
+
+Texture2D<float2>   _State;
+RWTexture2D<float2> _Next;
+StructuredBuffer<RippleSplat> _Splats;
+
+int2   _Size;
+float2 _MetresPerTexel;
+float  _Dt;
+float  _WaveSpeed;
+float  _Damping;
+float  _Viscosity;
+int    _SplatCount;
+
+float2 Load(int2 c)
+{
+    // Reflective edges (the water is held by the screen frame)
+    c = clamp(c, int2(0, 0), _Size - 1);
+    return _State[c];
+}
+
+[numthreads(8, 8, 1)]
+void Step(uint3 id : SV_DispatchThreadID)
+{
+    if (any(id.xy >= (uint2)_Size)) return;
+    int2 c = int2(id.xy);
+    float2 s  = _State[c];
+    float2 sL = Load(c - int2(1, 0));
+    float2 sR = Load(c + int2(1, 0));
+    float2 sD = Load(c - int2(0, 1));
+    float2 sU = Load(c + int2(0, 1));
+
+    float2 invDx2 = 1.0 / (_MetresPerTexel * _MetresPerTexel);
+    float lapH = (sL.x + sR.x - 2.0 * s.x) * invDx2.x + (sD.x + sU.x - 2.0 * s.x) * invDx2.y;
+    float lapV = (sL.y + sR.y - 2.0 * s.y) * invDx2.x + (sD.y + sU.y - 2.0 * s.y) * invDx2.y;
+
+    float v = s.y + (_WaveSpeed * _WaveSpeed * lapH + _Viscosity * lapV) * _Dt;
+
+    float2 posM = (float2(c) + 0.5) * _MetresPerTexel;
+    float2 sizeM = float2(_Size) * _MetresPerTexel;
+    for (int i = 0; i < _SplatCount; i++)
+    {
+        RippleSplat sp = _Splats[i];
+        float2 d = posM - sp.uv * sizeM;
+        v += sp.strength * exp(-dot(d, d) / max(sp.radius * sp.radius, 1e-6));
+    }
+
+    v *= exp(-_Damping * _Dt);
+    float h = s.x + v * _Dt;
+
+    // Slight extra absorption in the last few texels so energy leaves at the frame edges
+    float2 edge = min(float2(c), float2(_Size - 1 - c));
+    float border = saturate(min(edge.x, edge.y) / 4.0);
+    h *= lerp(0.97, 1.0, border);
+    v *= lerp(0.97, 1.0, border);
+
+    _Next[c] = clamp(float2(h, v), float2(-0.2, -5.0), float2(0.2, 5.0));
+}
+
+[numthreads(8, 8, 1)]
+void Clear(uint3 id : SV_DispatchThreadID)
+{
+    if (any(id.xy >= (uint2)_Size)) return;
+    _Next[id.xy] = float2(0, 0);
+}

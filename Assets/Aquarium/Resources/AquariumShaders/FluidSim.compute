@@ -1,0 +1,177 @@
+﻿// 2D stable-fluids solver (Stam 1999) for horizontal water currents across the whole tank (XZ plane).
+// Velocities are in metres per second, the grid covers _GridSize cells of _CellSize metres.
+// Pipeline per step: Advect -> Forces (+ambient current, touch splats, vorticity confinement)
+//                    -> Divergence -> Jacobi pressure (N iterations) -> Subtract gradient.
+
+#pragma kernel Advect
+#pragma kernel Curl
+#pragma kernel Forces
+#pragma kernel Divergence
+#pragma kernel Jacobi
+#pragma kernel SubtractGradient
+#pragma kernel Clear
+
+struct Splat
+{
+    float2 position;   // grid cell coordinates
+    float2 force;      // directional force (m/s^2)
+    float  radius;     // in cells
+    float  radial;     // outward push (m/s^2), positive = away from centre
+    float2 pad;
+};
+
+Texture2D<float2>   _VelocityIn;
+RWTexture2D<float2> _VelocityOut;
+Texture2D<float>    _CurlIn;
+RWTexture2D<float>  _CurlOut;
+Texture2D<float>    _DivergenceIn;
+RWTexture2D<float>  _DivergenceOut;
+Texture2D<float>    _PressureIn;
+RWTexture2D<float>  _PressureOut;
+StructuredBuffer<Splat> _Splats;
+
+SamplerState linearClampSampler;
+
+int2   _GridSize;
+float  _CellSize;
+float  _DeltaTime;
+float  _Dissipation;
+float  _Vorticity;
+int    _SplatCount;
+float2 _AmbientCurrent;  // base flow (m/s) in XZ
+float  _AmbientRelax;    // how strongly the field relaxes toward the ambient current (1/s)
+float  _SimTime;
+
+float2 LoadVel(int2 c)
+{
+    c = clamp(c, int2(0, 0), _GridSize - 1);
+    return _VelocityIn[c];
+}
+
+[numthreads(8, 8, 1)]
+void Advect(uint3 id : SV_DispatchThreadID)
+{
+    if (any(id.xy >= (uint2)_GridSize)) return;
+    float2 vel = _VelocityIn[id.xy];
+    float2 back = (float2(id.xy) + 0.5) - vel * _DeltaTime / _CellSize;
+    float2 uv = back / float2(_GridSize);
+    float2 advected = _VelocityIn.SampleLevel(linearClampSampler, uv, 0);
+    _VelocityOut[id.xy] = advected * (1.0 / (1.0 + _Dissipation * _DeltaTime));
+}
+
+[numthreads(8, 8, 1)]
+void Curl(uint3 id : SV_DispatchThreadID)
+{
+    if (any(id.xy >= (uint2)_GridSize)) return;
+    int2 c = int2(id.xy);
+    float vR = LoadVel(c + int2(1, 0)).y;
+    float vL = LoadVel(c - int2(1, 0)).y;
+    float uT = LoadVel(c + int2(0, 1)).x;
+    float uB = LoadVel(c - int2(0, 1)).x;
+    _CurlOut[id.xy] = ((vR - vL) - (uT - uB)) / (2.0 * _CellSize);
+}
+
+float LoadCurl(int2 c)
+{
+    c = clamp(c, int2(0, 0), _GridSize - 1);
+    return _CurlIn[c];
+}
+
+[numthreads(8, 8, 1)]
+void Forces(uint3 id : SV_DispatchThreadID)
+{
+    if (any(id.xy >= (uint2)_GridSize)) return;
+    int2 c = int2(id.xy);
+    float2 vel = _VelocityIn[c];
+    float2 p = float2(c) + 0.5;
+
+    // Vorticity confinement keeps swirls alive after a touch
+    float cL = abs(LoadCurl(c - int2(1, 0)));
+    float cR = abs(LoadCurl(c + int2(1, 0)));
+    float cB = abs(LoadCurl(c - int2(0, 1)));
+    float cT = abs(LoadCurl(c + int2(0, 1)));
+    float2 grad = float2(cR - cL, cT - cB) * 0.5;
+    float len = length(grad);
+    if (len > 1e-5)
+    {
+        float2 N = grad / len;
+        float w = LoadCurl(c);
+        vel += _Vorticity * _CellSize * float2(N.y * w, -N.x * w) * _DeltaTime;
+    }
+
+    // Gentle meandering ambient current
+    float2 world = p * _CellSize;
+    float2 ambient = _AmbientCurrent;
+    ambient.x += sin(world.y * 0.08 + _SimTime * 0.11) * 0.08 + sin(world.y * 0.21 - _SimTime * 0.07) * 0.04;
+    ambient.y *= 1.0 + 0.3 * sin(world.x * 0.2 + _SimTime * 0.05);
+    vel += (ambient - vel) * saturate(_AmbientRelax * _DeltaTime);
+
+    // Touch splats
+    for (int s = 0; s < _SplatCount; s++)
+    {
+        Splat sp = _Splats[s];
+        float2 d = p - sp.position;
+        float g = exp(-dot(d, d) / max(sp.radius * sp.radius, 1e-4));
+        float dl = length(d);
+        float2 outward = dl > 1e-4 ? d / dl : float2(0, 0);
+        vel += (sp.force + outward * sp.radial) * g * _DeltaTime;
+    }
+
+    // Solid tank walls: no flow through the side walls
+    if (c.x == 0 || c.x == _GridSize.x - 1) vel.x = 0;
+    _VelocityOut[c] = vel;
+}
+
+[numthreads(8, 8, 1)]
+void Divergence(uint3 id : SV_DispatchThreadID)
+{
+    if (any(id.xy >= (uint2)_GridSize)) return;
+    int2 c = int2(id.xy);
+    float uR = LoadVel(c + int2(1, 0)).x;
+    float uL = LoadVel(c - int2(1, 0)).x;
+    float vT = LoadVel(c + int2(0, 1)).y;
+    float vB = LoadVel(c - int2(0, 1)).y;
+    if (c.x == _GridSize.x - 1) uR = 0;
+    if (c.x == 0) uL = 0;
+    _DivergenceOut[c] = ((uR - uL) + (vT - vB)) / (2.0 * _CellSize);
+}
+
+float LoadPressure(int2 c)
+{
+    c = clamp(c, int2(0, 0), _GridSize - 1);
+    return _PressureIn[c];
+}
+
+[numthreads(8, 8, 1)]
+void Jacobi(uint3 id : SV_DispatchThreadID)
+{
+    if (any(id.xy >= (uint2)_GridSize)) return;
+    int2 c = int2(id.xy);
+    float pL = LoadPressure(c - int2(1, 0));
+    float pR = LoadPressure(c + int2(1, 0));
+    float pB = LoadPressure(c - int2(0, 1));
+    float pT = LoadPressure(c + int2(0, 1));
+    _PressureOut[c] = (pL + pR + pB + pT - _CellSize * _CellSize * _DivergenceIn[c]) * 0.25;
+}
+
+[numthreads(8, 8, 1)]
+void SubtractGradient(uint3 id : SV_DispatchThreadID)
+{
+    if (any(id.xy >= (uint2)_GridSize)) return;
+    int2 c = int2(id.xy);
+    float pL = LoadPressure(c - int2(1, 0));
+    float pR = LoadPressure(c + int2(1, 0));
+    float pB = LoadPressure(c - int2(0, 1));
+    float pT = LoadPressure(c + int2(0, 1));
+    float2 vel = _VelocityIn[c] - float2(pR - pL, pT - pB) / (2.0 * _CellSize);
+    if (c.x == 0 || c.x == _GridSize.x - 1) vel.x = 0;
+    _VelocityOut[c] = vel;
+}
+
+[numthreads(8, 8, 1)]
+void Clear(uint3 id : SV_DispatchThreadID)
+{
+    if (any(id.xy >= (uint2)_GridSize)) return;
+    _VelocityOut[id.xy] = float2(0, 0);
+    _PressureOut[id.xy] = 0;
+}
